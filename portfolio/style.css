@@ -1,0 +1,111 @@
+:root {
+  --bg-color-main: #222222;
+  --bg-color-add: #ffffff;
+
+  --text-color-main: #ffffff;
+  --text-color-add: #222222;
+
+  --color-accent: #ff3c3c;
+  --color-pale: #989898;
+
+  --font-family: "Mulish", sans-serif;
+  --second-family: "Oswald", sans-serif;
+}
+
+@font-face {
+  font-family: Mulish;
+  src: url("./assets/fonts/Mulish/Mulish-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Mulish;
+  src: url("./assets/fonts/Mulish/Mulish-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Mulish;
+  src: url("./assets/fonts/Mulish/Mulish-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url("./assets/fonts/Oswald/Oswald-Light.woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url("./assets/fonts/Oswald/Oswald-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color-main);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  color: var(--text-color-main);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
