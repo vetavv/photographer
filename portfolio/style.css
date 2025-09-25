@@ -214,6 +214,7 @@ img {
   flex-direction: column;
   margin-inline: auto;
   padding-block: clamp(20px, 15.79vw, 60px);
+  padding-inline: 20px;
 }
 
 .hero__title {
@@ -413,6 +414,7 @@ img {
 
   .hero-wrapper_main {
     flex-basis: 740px;
+    padding-left: 0;
   }
 
   .hero-wrapper_add {
