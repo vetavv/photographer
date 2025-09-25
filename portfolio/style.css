@@ -544,3 +544,87 @@ img {
 .portfolio__item.medium.center {
   margin-top: 120px;
 }
+
+/* =================== PRICE BLOCK =================== */
+
+.price__description {
+  margin-bottom: 40px;
+}
+
+.price__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 320px));
+  gap: 20px;
+  justify-content: center;
+}
+
+.price__item {
+  flex: 1 1 320px;
+}
+
+.card {
+  box-sizing: border-box;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--bg-color-main);
+}
+
+.card__title {
+  margin-bottom: 12px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.card__list {
+  margin-bottom: 8px;
+}
+
+.card__item {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 4px;
+}
+
+.card__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  background-color: var(--bg-color-main);
+}
+
+.card__price {
+  font-family: var(--second-family);
+  text-transform: uppercase;
+}
+
+.card__add-info {
+  font-style: italic;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  margin-top: auto;
+}
+
+.card__btn {
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 60px;
+  color: var(--text-color-main);
+  background-color: var(--bg-color-main);
+  padding-inline: 20px;
+  font-family: var(--second-family);
+  text-transform: uppercase;
+}
+
+@media (min-width: 769px) {
+  .price__list {
+    gap: clamp(20px, 2.78vw, 40px);
+  }
+}
