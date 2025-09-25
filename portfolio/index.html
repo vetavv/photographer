@@ -32,24 +32,37 @@
     </header>
 
     <main>
-        <h1 class="visually-hidden">Photographer's professional portfolio</h1>
-        <section id="hero">
-            <h2>Professional photographer</h2>
-            <p>Capture the Moment. Tell Your Story.</p>
-            <p>Hi! I’m Vera, a photographer. For me, photography is more than just an image.</p>
-            <img src="./assets/images/content/webp/img-10.webp"
-                alt="The photo full of freedom and air, with a woman along the mountains." width="3000" height="4000"
-                fetchpriority="high">
-            <img src="./assets/images/content/webp/img-11.webp" alt="The photo of woman with strong and magic gaze."
-                width="3000" height="4000" fetchpriority="high">
-            <dl>
-                <dt>Photo sessions</dt>
-                <dd>487</dd>
-                <dt>Satisfied clients</dt>
-                <dd>356</dd>
-            </dl>
-            <p><span>2025</span> <span>Best Photographer by MAX</span></p>
-            <a href="#about">Scroll down</a>
+        <section class="block hero" id="hero">
+            <div class="hero-wrapper hero-wrapper_main">
+                <dl class="stats">
+                    <div class="stats__item">
+                        <dt class="stats__description">Photo sessions</dt>
+                        <dd class="stats__value">487</dd>
+                    </div>
+                    <div class="stats__item">
+                        <dt class="stats__description">Satisfied clients</dt>
+                        <dd class="stats__value">356</dd>
+                    </div>
+                </dl>
+                <h1 class="hero__title">Professional photographer</h1>
+                <p class="hero__slogan">Capture the Moment. Tell Your Story.</p>
+                <a class="hero__btn" href="#about">Scroll down</a>
+            </div>
+
+            <div class="hero-wrapper hero-wrapper_add">
+                <img class="hero__img_1" src="./assets/images/content/webp/img-10.webp"
+                    alt="The photo full of freedom and air, with a woman along the mountains." width="3000"
+                    height="4000" fetchpriority="high">
+            </div>
+
+            <div class="hero__intro-wrapper hero-wrapper_intro">
+                <img class="hero__img_2" src="./assets/images/content/webp/img-11.webp"
+                    alt="The photo of woman with strong and magic gaze." width="3000" height="4000"
+                    fetchpriority="high">
+                <p class="hero__intro">Hi! I’m Vera, a photographer. For me, photography is more than just an image.</p>
+            </div>
+
+            <p class="award"><span>2025</span> <span>Best Photographer by MAX</span></p>
         </section>
 
         <section id="about">

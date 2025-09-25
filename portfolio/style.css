@@ -169,3 +169,235 @@ img {
     display: none;
   }
 }
+
+/* =================== HERO BLOCK =================== */
+
+.hero {
+  box-sizing: border-box;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  padding-block: clamp(20px, 15.79vw, 60px);
+}
+
+.hero__title {
+  margin-bottom: clamp(10px, 10.5vw, 40px);
+  font-family: var(--second-family);
+  font-size: clamp(1rem, 14.74vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.hero__slogan {
+  margin-bottom: 20px;
+  font-family: var(--second-family);
+  font-size: clamp(0.7rem, 5.26vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.hero-wrapper_intro {
+  width: 57.89vw;
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  align-items: end;
+  text-align: right;
+}
+
+.hero__intro {
+  max-width: 220px;
+  font-size: clamp(0.7rem, 4.21vw, 1rem);
+}
+
+.hero__img_2 {
+  margin-bottom: clamp(20px, 15.79vw, 60px);
+}
+
+.stats {
+  width: 100%;
+  max-width: 342px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  margin: 0;
+  margin-bottom: clamp(20px, 10.53vw, 40px);
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 27px;
+}
+
+.stats__value {
+  position: relative;
+  margin: 0;
+  margin-bottom: 8px;
+  font-family: var(--second-family);
+  font-weight: 300;
+  font-size: clamp(1rem, 12.6vw, 3rem);
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.stats__value::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 0;
+  bottom: 0;
+  width: 19px;
+  background-image: url("./assets/images/decor/plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+}
+
+.stats__description {
+  order: 1;
+  font-size: clamp(0.7rem, 4.21vw, 1rem);
+}
+
+.award,
+.hero__btn,
+.hero-wrapper_add {
+  display: none;
+}
+
+@media (min-width: 650px) {
+  .hero {
+    min-height: 758px;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    column-gap: 20px;
+    padding: 0;
+    padding-right: 20px;
+  }
+
+  .hero__title {
+    line-height: 1.17;
+    font-size: clamp(3.5rem, 8.85vw, 4.25rem);
+  }
+
+  .hero-wrapper_main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+    padding-left: 20px;
+  }
+
+  .hero__btn {
+    display: block;
+    align-self: start;
+    padding-right: 32px;
+    background-image: url("./assets/images/decor/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+
+  .hero-wrapper_add {
+    align-self: center;
+  }
+
+  .hero-wrapper_intro {
+    max-width: 280px;
+    align-self: auto;
+    justify-content: space-between;
+    align-items: end;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 4px;
+    flex-grow: 2;
+  }
+
+  .stats {
+    margin-top: auto;
+    box-sizing: border-box;
+    padding-right: 20px;
+    justify-content: space-between;
+    max-width: 361px;
+  }
+
+  .award {
+    box-sizing: border-box;
+    width: 60px;
+    display: block;
+    order: -1;
+    writing-mode: vertical-lr;
+    flex-basis: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: scale(-1);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 0.75rem;
+    line-height: 1.33;
+    font-weight: 500;
+  }
+
+  .award::before {
+    content: "";
+    background-color: var(--bg-color-add);
+    width: 2px;
+    flex-grow: 1;
+    order: 1;
+  }
+
+  .award span:first-of-type {
+    padding-bottom: 12px;
+  }
+
+  .award span:last-of-type {
+    order: 2;
+    padding-top: 12px;
+  }
+
+  .hero__slogan {
+    margin-bottom: auto;
+  }
+}
+
+@media (min-width: 980px) {
+  .hero {
+    height: calc(100vh - 60px);
+    max-height: 862px;
+    min-height: 780px;
+    column-gap: clamp(
+      10px,
+      10px + (40 - 10) * (100vw - 980px) / (1440 - 980),
+      40px
+    );
+  }
+
+  .hero-wrapper_main {
+    flex-basis: 740px;
+  }
+
+  .hero-wrapper_add {
+    display: block;
+    flex-basis: 220px;
+  }
+
+  .hero-wrapper_intro {
+    flex-basis: 280px;
+  }
+
+  .hero__img_1 {
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero__title {
+    font-size: clamp(
+      68px,
+      68px + (116 - 68) * (100vw - 980px) / (1440 - 980),
+      116px
+    );
+  }
+}
