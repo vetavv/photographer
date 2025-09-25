@@ -483,3 +483,64 @@ img {
     columns: 3 auto;
   }
 }
+
+/* =================== PORTFOLIO BLOCK =================== */
+
+.portfolio {
+  padding-bottom: 60px;
+}
+
+.portfolio .wrapper {
+  padding-bottom: 0;
+}
+
+.portfolio__description {
+  max-width: 360px;
+  margin-bottom: 40px;
+}
+
+.portfolio__list-wrapper {
+  width: 100vw;
+  height: 654px;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio__list {
+  height: 654px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  column-gap: 20px;
+}
+
+.portfolio__item {
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.portfolio__item.small {
+  width: 220px;
+  align-self: center;
+}
+
+.portfolio__item.small img {
+  aspect-ratio: 1 / 1;
+}
+
+.portfolio__item.medium {
+  width: 280px;
+}
+
+.portfolio__item.bottom {
+  align-self: end;
+}
+
+.portfolio__item.small.center {
+  align-self: center;
+}
+
+.portfolio__item.medium.center {
+  margin-top: 120px;
+}
