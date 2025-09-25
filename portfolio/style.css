@@ -112,8 +112,43 @@ img {
   object-fit: cover;
 }
 
-.block {
+.wrapper {
+  box-sizing: border-box;
+  max-width: 1440px;
+  padding-block: clamp(20px, 15.79vw, 60px);
   padding-inline: 20px;
+  margin-inline: auto;
+}
+
+.block {
+  width: 100%;
+}
+
+.block_add {
+  background-color: var(--bg-color-add);
+  color: var(--text-color-add);
+}
+
+.block_main {
+  background-color: var(--bg-color-main);
+  color: var(--text-color-main);
+}
+
+.title {
+  margin-bottom: 12px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.title_add {
+  color: var(--text-color-add);
+}
+
+.title_main {
+  color: var(--text-color-main);
 }
 
 .header {
