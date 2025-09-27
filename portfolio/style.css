@@ -304,16 +304,12 @@ img {
 }
 
 .stats__value::before {
-  content: "";
+  content: "+";
   position: absolute;
   left: -27px;
   top: 0;
   bottom: 0;
   width: 19px;
-  background-image: url("./assets/images/decor/plus.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 25px;
 }
 
 .stats__description {
@@ -419,7 +415,7 @@ img {
   .award::before {
     content: "";
     background-color: var(--bg-color-add);
-    width: 2px;
+    width: 1px;
     flex-grow: 1;
     order: 1;
   }
@@ -469,6 +465,7 @@ img {
   }
 
   .hero__title {
+    line-height: 1.14;
     font-size: clamp(
       68px,
       68px + (116 - 68) * (100vw - 980px) / (1440 - 980),
@@ -480,6 +477,7 @@ img {
 /* =================== ABOUT BLOCK =================== */
 
 .about__img {
+  width: 100%;
   margin-bottom: 40px;
   aspect-ratio: 1 / 1;
 }
