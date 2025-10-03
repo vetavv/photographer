@@ -79,6 +79,11 @@ body {
   line-height: 1.5;
   font-style: normal;
   color: var(--text-color-main);
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow-y: hidden;
 }
 
 ul {
@@ -159,6 +164,7 @@ img {
 }
 
 .header {
+  position: relative;
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
@@ -168,7 +174,33 @@ img {
 }
 
 .menu {
-  display: none;
+  position: absolute;
+  z-index: 2;
+  left: 100%;
+  right: -100%;
+  top: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color-main);
+  transition: all 0.4s ease-in-out;
+}
+
+.menu.open {
+  left: 0;
+  right: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu__list {
+  width: 100%;
+}
+
+.menu__link {
+  display: block;
+  line-height: 60px;
+  width: 100%;
+  text-align: center;
 }
 
 .menu__link {
@@ -200,16 +232,50 @@ img {
 }
 
 .burger-btn {
+  position: relative;
   width: 60px;
   height: 60px;
-  background-image: url("./assets/images/decor/burger.svg");
-  background-position: center;
-  background-size: 100%;
+}
+
+.menu.open ~ .burger-btn::before {
+  width: 20px;
+  transform: rotate(45deg);
+  top: 27px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu.open ~ .burger-btn::after {
+  top: 27px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-btn::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  height: 2px;
+  width: 12px;
+  background-color: var(--text-color-main);
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+  height: 2px;
+  width: 20px;
+  background-color: var(--text-color-main);
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 769px) {
   .menu {
-    display: block;
+    position: static;
+    height: auto;
   }
 
   .menu__list {
@@ -218,6 +284,7 @@ img {
 
   .menu__link {
     display: block;
+    width: auto;
     padding-inline: 20px;
     line-height: 60px;
   }
