@@ -64,3 +64,33 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   openAccordion(accordionItems[indexOfOpenedAccordion]);
 });
+
+// *************** MODALS ***************
+
+const bookBtns = document.querySelectorAll(".card__btn");
+const modalBooking = document.querySelector("#modalBooking");
+const modalCloseBtn = modalBooking.querySelector(".modal__close-btn");
+
+function closeModal(modal) {
+  modal.classList.remove("open");
+  document.body.classList.remove("no-scroll");
+}
+
+function openModal(modal) {
+  modal.classList.add("open");
+  document.body.classList.add("no-scroll");
+}
+
+bookBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    openModal(modalBooking);
+  });
+});
+
+modalBooking.addEventListener("click", (e) => {
+  if (!e.target.closest(".modal-content")) {
+    closeModal(modalBooking);
+  } else if (e.target.matches(".modal__close-btn")) {
+    closeModal(modalBooking);
+  }
+});
