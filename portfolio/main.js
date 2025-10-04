@@ -11,7 +11,7 @@ function toggleMenu() {
 
 burgerBtn.addEventListener("click", toggleMenu);
 menuList.addEventListener("click", (e) => {
-  if (e.target.classList.contains("menu__link")) {
+  if (e.target.matches(".menu__link")) {
     toggleMenu();
   }
 });
