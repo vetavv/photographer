@@ -820,12 +820,18 @@ img {
 }
 
 .faq__answer {
-  margin-bottom: 19px;
-  display: none;
+  padding-bottom: 19px;
 }
 
-.faq__item.open .faq__answer {
-  display: block;
+.faq__answer-wrapper {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.faq__item.open .faq__answer-wrapper {
+  height: auto;
+  transition: height 0.3s ease-in-out;
 }
 
 @media (min-width: 950px) {

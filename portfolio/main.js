@@ -15,3 +15,52 @@ menuList.addEventListener("click", (e) => {
     toggleMenu();
   }
 });
+
+// *************** ACCORDIONS ***************
+
+const faqList = document.querySelector(".faq__list");
+const accordionItems = Array.from(faqList.querySelectorAll(".faq__item"));
+const indexOfOpenAccordion = 0;
+
+function openAccordion(item) {
+  const answerWrapper = item.querySelector(".faq__answer-wrapper");
+  const answer = item.querySelector(".faq__answer");
+  answerWrapper.style.height = `${answer.clientHeight}px`;
+  item.classList.add("open");
+}
+
+function closeAccordion(item) {
+  const answerWrapper = item.querySelector(".faq__answer-wrapper");
+  answerWrapper.style.height = "0";
+  item.classList.remove("open");
+}
+
+function closeAllAccordions() {
+  accordionItems.forEach((item) => {
+    closeAccordion(item);
+  });
+}
+
+faqList.addEventListener("click", (e) => {
+  if (e.target.matches(".faq__question")) {
+    const item = e.target.closest(".faq__item");
+    if (item.classList.contains("open")) {
+      closeAccordion(item);
+    } else {
+      closeAllAccordions();
+      openAccordion(item);
+
+      localStorage.setItem(
+        "indexOfOpenedAccordion",
+        accordionItems.indexOf(item)
+      );
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const indexOfOpenedAccordion = Number(
+    localStorage.getItem("indexOfOpenedAccordion")
+  );
+  openAccordion(accordionItems[indexOfOpenedAccordion]);
+});
