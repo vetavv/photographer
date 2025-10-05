@@ -6,7 +6,7 @@ const menuList = menu.querySelector(".menu__list");
 
 function toggleMenu() {
   menu.classList.toggle("open");
-  document.body.classList.toggle("no-scroll");
+  document.documentElement.classList.toggle("no-scroll");
 }
 
 burgerBtn.addEventListener("click", toggleMenu);
