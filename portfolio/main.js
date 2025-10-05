@@ -73,12 +73,12 @@ const modalCloseBtn = modalBooking.querySelector(".modal__close-btn");
 
 function closeModal(modal) {
   modal.classList.remove("open");
-  document.body.classList.remove("no-scroll");
+  document.documentElement.classList.remove("no-scroll");
 }
 
 function openModal(modal) {
   modal.classList.add("open");
-  document.body.classList.add("no-scroll");
+  document.documentElement.classList.add("no-scroll");
 }
 
 bookBtns.forEach((btn) => {

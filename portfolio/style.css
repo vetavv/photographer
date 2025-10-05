@@ -83,7 +83,7 @@ body {
   overflow-x: hidden;
 }
 
-body.no-scroll {
+.no-scroll {
   overflow-y: hidden;
 }
 
@@ -1002,11 +1002,12 @@ img {
 
 .modal-content {
   position: absolute;
+  box-sizing: border-box;
   top: 50%;
   left: 100%;
   transform: translate(0, -50%);
   max-width: 500px;
-  width: 100%;
+  width: calc(100% - 40px);
   padding: 60px;
   background-color: var(--bg-color-add);
   transition: var(--transition-out);
@@ -1027,6 +1028,7 @@ img {
 }
 
 .modal__btn {
+  padding: 0;
   width: 100%;
 }
 
