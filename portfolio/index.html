@@ -16,57 +16,63 @@
 
 <body>
     <header class="header">
-        <a class="logo" href="#">
-            <img src="./assets/images/decor/logo.svg" alt="Heart is a symbol of my love for photography.">
-            <span class="visually-hidden">Nice to meet you</span>
-        </a>
-        <nav class="menu" id="menu">
-            <ul class="menu__list">
-                <li><a class="menu__link" href="#about">About me</a></li>
-                <li><a class="menu__link" href="#portfolio">Portfolio</a></li>
-                <li><a class="menu__link" href="#price">Price</a></li>
-                <li><a class="menu__link" href="#faq">Faq</a></li>
-                <li><a class="menu__link" href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-        <button class="burger-btn" id="burgerBtn" type="button"><span class="visually-hidden">Open menu</span></button>
+        <div class="wrapper">
+            <a class="logo" href="#">
+                <img src="./assets/images/decor/logo.svg" alt="Heart is a symbol of my love for photography.">
+                <span class="visually-hidden">Nice to meet you</span>
+            </a>
+            <nav class="menu" id="menu">
+                <ul class="menu__list">
+                    <li><a class="menu__link" href="#about">About me</a></li>
+                    <li><a class="menu__link" href="#portfolio">Portfolio</a></li>
+                    <li><a class="menu__link" href="#price">Price</a></li>
+                    <li><a class="menu__link" href="#faq">Faq</a></li>
+                    <li><a class="menu__link" href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+            <button class="burger-btn" id="burgerBtn" type="button"><span class="visually-hidden">Open
+                    menu</span></button>
+        </div>
     </header>
 
     <main>
-        <section class="block hero" id="hero">
-            <div class="hero-wrapper hero-wrapper_main">
-                <dl class="stats">
-                    <div class="stats__item">
-                        <dt class="stats__description">Photo sessions</dt>
-                        <dd class="stats__value">487</dd>
-                    </div>
-                    <div class="stats__item">
-                        <dt class="stats__description">Satisfied clients</dt>
-                        <dd class="stats__value">356</dd>
-                    </div>
-                </dl>
-                <h1 class="hero__title">Professional photographer</h1>
-                <p class="hero__slogan">Capture the Moment. Tell Your Story.</p>
-                <a class="hero__btn" href="#about">Scroll down</a>
-            </div>
+        <section class="block block_main hero" id="hero">
+            <div class="wrapper">
+                <div class="hero-wrapper hero-wrapper_main">
+                    <dl class="stats">
+                        <div class="stats__item">
+                            <dt class="stats__description">Photo sessions</dt>
+                            <dd class="stats__value">487</dd>
+                        </div>
+                        <div class="stats__item">
+                            <dt class="stats__description">Satisfied clients</dt>
+                            <dd class="stats__value">356</dd>
+                        </div>
+                    </dl>
+                    <h1 class="hero__title">Professional photographer</h1>
+                    <p class="hero__slogan">Capture the Moment. Tell Your Story.</p>
+                    <a class="hero__btn" href="#about">Scroll down</a>
+                </div>
 
-            <div class="hero-wrapper hero-wrapper_add">
-                <img class="hero__img_1"
-                    srcset="./assets/images/content/img-10-220px.webp 220w, ./assets/images/content/img-10-440px.webp 440w, ./assets/images/content/img-10-660px.webp 660w"
-                    sizes="220px" src="./assets/images/content/img-10-220px.webp"
-                    alt="The photo full of freedom and air, with a woman along the mountains." width="220"
-                    fetchpriority="high">
-            </div>
+                <div class="hero-wrapper hero-wrapper_add">
+                    <img class="hero__img_1"
+                        srcset="./assets/images/content/img-10-220px.webp 220w, ./assets/images/content/img-10-440px.webp 440w, ./assets/images/content/img-10-660px.webp 660w"
+                        sizes="220px" src="./assets/images/content/img-10-220px.webp"
+                        alt="The photo full of freedom and air, with a woman along the mountains." width="220"
+                        fetchpriority="high">
+                </div>
 
-            <div class="hero__intro-wrapper hero-wrapper_intro">
-                <img class="hero__img_2"
-                    srcset="./assets/images/content/img-11-280px.webp 280w, ./assets/images/content/img-11-560px.webp 560w, ./assets/images/content/img-11-840px.webp 840w"
-                    sizes="280px" src="./assets/images/content/webp/img-11.webp"
-                    alt="The photo of woman with strong and magic gaze." width="280" fetchpriority="high">
-                <p class="hero__intro">Hi! I’m Vera, a photographer. For me, photography is more than just an image.</p>
-            </div>
+                <div class="hero__intro-wrapper hero-wrapper_intro">
+                    <img class="hero__img_2"
+                        srcset="./assets/images/content/img-11-280px.webp 280w, ./assets/images/content/img-11-560px.webp 560w, ./assets/images/content/img-11-840px.webp 840w"
+                        sizes="280px" src="./assets/images/content/webp/img-11.webp"
+                        alt="The photo of woman with strong and magic gaze." width="280" fetchpriority="high">
+                    <p class="hero__intro">Hi! I’m Vera, a photographer. For me, photography is more than just an image.
+                    </p>
+                </div>
 
-            <p class="award"><span>2025</span> <span>Best Photographer by MAX</span></p>
+                <p class="award"><span>2025</span> <span>Best Photographer by MAX</span></p>
+            </div>
         </section>
 
         <section class="block block_add about" id="about">

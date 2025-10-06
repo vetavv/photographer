@@ -73,7 +73,7 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--bg-color-main);
+  background-color: var(--bg-color-add);
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 400;
@@ -165,6 +165,11 @@ img {
 }
 
 .header {
+  width: 100%;
+  background-color: var(--bg-color-main);
+}
+
+.header .wrapper {
   position: relative;
   margin-inline: auto;
   display: flex;
@@ -297,7 +302,7 @@ img {
 
 /* =================== HERO BLOCK =================== */
 
-.hero {
+.hero .wrapper {
   box-sizing: border-box;
   max-width: 1440px;
   display: flex;
@@ -392,7 +397,7 @@ img {
 }
 
 @media (min-width: 650px) {
-  .hero {
+  .hero .wrapper {
     min-height: 758px;
     flex-direction: row;
     align-items: stretch;
