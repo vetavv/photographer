@@ -58,13 +58,6 @@ faqList.addEventListener("click", (e) => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const indexOfOpenedAccordion = Number(
-    localStorage.getItem("indexOfOpenedAccordion")
-  );
-  openAccordion(accordionItems[indexOfOpenedAccordion]);
-});
-
 // *************** MODALS ***************
 
 const bookBtns = document.querySelectorAll(".card__btn");
@@ -93,4 +86,61 @@ modalBooking.addEventListener("click", (e) => {
   } else if (e.target.matches(".modal__close-btn")) {
     closeModal(modalBooking);
   }
+});
+
+// *************** SLIDER ***************
+
+const sliderPortfolio = document.querySelector("#sliderPortfolio");
+const sliderWidth = sliderPortfolio.scrollWidth;
+const sliderLeftBtn = document.querySelector("#portfolioLeft");
+const sliderRightBtn = document.querySelector("#portfolioRight");
+let currentTimer = null;
+
+function goRight(slider) {
+  const i = setInterval(() => {
+    slider.scrollLeft += 1;
+    if (slider.scrollLeft === sliderWidth - slider.clientWidth) {
+      clearInterval(i);
+    }
+  }, 5);
+  return i;
+}
+
+function goLeft(slider) {
+  const i = setInterval(() => {
+    slider.scrollLeft -= 1;
+    if (slider.scrollLeft === 0) {
+      clearInterval(i);
+    }
+  }, 5);
+  return i;
+}
+
+sliderLeftBtn.addEventListener("mouseenter", () => {
+  currentTimer = goLeft(sliderPortfolio);
+});
+
+sliderLeftBtn.addEventListener("mouseleave", () => {
+  clearInterval(currentTimer);
+});
+
+sliderRightBtn.addEventListener("mouseenter", () => {
+  currentTimer = goRight(sliderPortfolio);
+});
+
+sliderRightBtn.addEventListener("mouseleave", () => {
+  clearInterval(currentTimer);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const indexOfOpenedAccordion = Number(
+    localStorage.getItem("indexOfOpenedAccordion")
+  );
+  openAccordion(accordionItems[indexOfOpenedAccordion]);
+
+  sliderPortfolio.scrollLeft = (sliderWidth - sliderPortfolio.clientWidth) / 2;
+});
+
+window.addEventListener("resize", () => {
+  sliderPortfolio.scrollLeft = (sliderWidth - sliderPortfolio.clientWidth) / 2;
 });
