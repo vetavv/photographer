@@ -245,14 +245,12 @@ img {
 
 .menu.open ~ .burger-btn::before {
   width: 20px;
-  transform: rotate(45deg);
-  top: 27px;
+  transform: rotate(-45deg) translate(-2px, 1px);
   transition: all 0.3s ease-in-out;
 }
 
 .menu.open ~ .burger-btn::after {
-  top: 27px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg) translate(-4px, -4px);
   transition: all 0.3s ease-in-out;
 }
 
