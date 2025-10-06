@@ -3,21 +3,32 @@
 const burgerBtn = document.querySelector("#burgerBtn");
 const menu = document.querySelector("#menu");
 const menuList = menu.querySelector(".menu__list");
+let scrollbarWidth = 0;
 
-function toggleMenu() {
-  menu.classList.toggle("open");
-  document.documentElement.classList.toggle("no-scroll");
+function openMenu() {
+  menu.classList.add("open");
+  document.documentElement.classList.add("no-scroll");
+  document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
 }
 
 function closeMenu() {
   menu.classList.remove("open");
   document.documentElement.classList.remove("no-scroll");
+  document.documentElement.style.paddingRight = `0px`;
 }
 
-burgerBtn.addEventListener("click", toggleMenu);
+burgerBtn.addEventListener("click", (e) => {
+  const menu = e.target.previousElementSibling;
+  if (menu.classList.contains("open")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
 menuList.addEventListener("click", (e) => {
   if (e.target.matches(".menu__link")) {
-    toggleMenu();
+    closeMenu();
   }
 });
 
@@ -78,11 +89,13 @@ const modalCloseBtn = modalBooking.querySelector(".modal__close-btn");
 function closeModal(modal) {
   modal.classList.remove("open");
   document.documentElement.classList.remove("no-scroll");
+  document.documentElement.style.paddingRight = `0px`;
 }
 
 function openModal(modal) {
   modal.classList.add("open");
   document.documentElement.classList.add("no-scroll");
+  document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
 }
 
 bookBtns.forEach((btn) => {
@@ -143,9 +156,12 @@ sliderRightBtn.addEventListener("mouseleave", () => {
   clearInterval(currentTimer);
 });
 
+// *************** GENERAL ***************
+
 document.addEventListener("DOMContentLoaded", () => {
   sliderPortfolio.scrollLeft = (sliderWidth - sliderPortfolio.clientWidth) / 2;
   initAccordion();
+  scrollbarWidth = getScrollBarWidth();
 });
 
 window.addEventListener("resize", () => {
@@ -155,5 +171,35 @@ window.addEventListener("resize", () => {
   const desktopWidth = window.matchMedia("(width >= 769px)");
   if (desktopWidth.matches) {
     closeMenu();
+    scrollbarWidth = getScrollBarWidth();
   }
 });
+
+// Calc scrollbar width
+// To prevent body shift when modals are open
+
+function getScrollBarWidth() {
+  var inner = document.createElement("p");
+  inner.style.width = "100%";
+  inner.style.height = "200px";
+
+  var outer = document.createElement("div");
+  outer.style.position = "absolute";
+  outer.style.top = "0px";
+  outer.style.left = "0px";
+  outer.style.visibility = "hidden";
+  outer.style.width = "200px";
+  outer.style.height = "150px";
+  outer.style.overflow = "hidden";
+  outer.appendChild(inner);
+
+  document.body.appendChild(outer);
+  var w1 = inner.offsetWidth;
+  outer.style.overflow = "scroll";
+  var w2 = inner.offsetWidth;
+  if (w1 == w2) w2 = outer.clientWidth;
+
+  document.body.removeChild(outer);
+
+  return w1 - w2;
+}
