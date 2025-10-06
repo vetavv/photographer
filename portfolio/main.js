@@ -9,6 +9,11 @@ function toggleMenu() {
   document.documentElement.classList.toggle("no-scroll");
 }
 
+function closeMenu() {
+  menu.classList.remove("open");
+  document.documentElement.classList.remove("no-scroll");
+}
+
 burgerBtn.addEventListener("click", toggleMenu);
 menuList.addEventListener("click", (e) => {
   if (e.target.matches(".menu__link")) {
@@ -139,7 +144,6 @@ sliderRightBtn.addEventListener("mouseleave", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("here");
   sliderPortfolio.scrollLeft = (sliderWidth - sliderPortfolio.clientWidth) / 2;
   initAccordion();
 });
@@ -147,4 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("resize", () => {
   sliderPortfolio.scrollLeft = (sliderWidth - sliderPortfolio.clientWidth) / 2;
   initAccordion();
+
+  const desktopWidth = window.matchMedia("(width >= 769px)");
+  if (desktopWidth.matches) {
+    closeMenu();
+  }
 });
