@@ -20,7 +20,6 @@ menuList.addEventListener("click", (e) => {
 
 const faqList = document.querySelector(".faq__list");
 const accordionItems = Array.from(faqList.querySelectorAll(".faq__item"));
-const indexOfOpenAccordion = 0;
 
 function openAccordion(item) {
   const answerWrapper = item.querySelector(".faq__answer-wrapper");
@@ -39,6 +38,13 @@ function closeAllAccordions() {
   accordionItems.forEach((item) => {
     closeAccordion(item);
   });
+}
+
+function initAccordion() {
+  const indexOfOpenedAccordion = Number(
+    localStorage.getItem("indexOfOpenedAccordion")
+  );
+  openAccordion(accordionItems[indexOfOpenedAccordion]);
 }
 
 faqList.addEventListener("click", (e) => {
@@ -133,14 +139,12 @@ sliderRightBtn.addEventListener("mouseleave", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const indexOfOpenedAccordion = Number(
-    localStorage.getItem("indexOfOpenedAccordion")
-  );
-  openAccordion(accordionItems[indexOfOpenedAccordion]);
-
+  console.log("here");
   sliderPortfolio.scrollLeft = (sliderWidth - sliderPortfolio.clientWidth) / 2;
+  initAccordion();
 });
 
 window.addEventListener("resize", () => {
   sliderPortfolio.scrollLeft = (sliderWidth - sliderPortfolio.clientWidth) / 2;
+  initAccordion();
 });
