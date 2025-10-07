@@ -60,7 +60,9 @@ function initAccordion() {
   const indexOfOpenedAccordion = Number(
     localStorage.getItem("indexOfOpenedAccordion")
   );
-  openAccordion(accordionItems[indexOfOpenedAccordion]);
+  if (indexOfOpenedAccordion !== -1) {
+    openAccordion(accordionItems[indexOfOpenedAccordion]);
+  }
 }
 
 faqList.addEventListener("click", (e) => {
@@ -68,6 +70,7 @@ faqList.addEventListener("click", (e) => {
     const item = e.target.closest(".faq__item");
     if (item.classList.contains("open")) {
       closeAccordion(item);
+      localStorage.setItem("indexOfOpenedAccordion", -1);
     } else {
       closeAllAccordions();
       openAccordion(item);
