@@ -641,7 +641,7 @@ img {
   right: 0;
 }
 
-@media (hover: coarse) {
+@media (hover:none) {
   .portfolio__control {
     display: none;
   }
