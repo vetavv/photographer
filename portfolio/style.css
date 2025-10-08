@@ -69,6 +69,7 @@
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -641,7 +642,7 @@ img {
   right: 0;
 }
 
-@media (hover:none) {
+@media (hover: none) {
   .portfolio__control {
     display: none;
   }
